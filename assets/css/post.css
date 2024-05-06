@@ -1,0 +1,18 @@
+/* Hide post content editor and other unnecessary elements */
+        #postdivrich,
+        #postexcerpt,
+        #postimagediv,
+        #commentstatusdiv,
+        #slugdiv,
+        #authordiv,
+        .misc-pub-post-status,
+        .misc-pub-visibility,
+        #minor-publishing-actions,
+        #visibility,
+        .misc-pub-revisions,
+        .misc-pub-curtime,
+        .misc-pub-postname,
+        #astra_settings_meta_box,
+        .misc-pub-sticky {
+            display: none !important;
+        }
