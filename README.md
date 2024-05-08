@@ -2,7 +2,14 @@
 
 Unlimited Marquee is a WordPress plugin designed to enhance your website with interactive marquees. You can easily create and customize marquees with various options to make them fit your design seamlessly.
 
+Easily add new Marquee
 ![alt text](https://github.com/Irfan-Jamal/Unlimited-Marquee-WordPress-Plugin/blob/main/Screenshot-1.png)
+
+Adjust styles and content
+![alt text](https://github.com/Irfan-Jamal/Unlimited-Marquee-WordPress-Plugin/blob/main/Screenshot-2.png)
+
+Publish it and enjoy
+![alt text](https://github.com/Irfan-Jamal/Unlimited-Marquee-WordPress-Plugin/blob/main/Screenshot-3.png)
 
 
 
