@@ -1122,4 +1122,3 @@ function custom_before_comment_text() {
 }
 
 add_action('comment_form_before', 'custom_before_comment_text');
-
