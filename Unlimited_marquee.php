@@ -25,31 +25,33 @@ add_action('admin_enqueue_scripts', 'enqueue_color_picker');
 
 function unlimited_marquee_js() {
     // Enqueue first JavaScript file for non-admin
-    wp_enqueue_script( 'unlimited-marquee-script', plugins_url( '/assets/js/marquee.js', __FILE__ ), array(), false, true );
+    wp_enqueue_script( 'unlimited-marquee-script', plugins_url( '/assets/js/marquee.js', __FILE__ ), array(), '1.0.0', true );
 
     // Enqueue second JavaScript file for non-admin
 }
 add_action( 'wp_enqueue_scripts', 'unlimited_marquee_js' );
 
+
 function admin_unlimited_marquee_js() {
     // Enqueue first JavaScript file
-    wp_enqueue_script( 'admin-theme-script', plugins_url( '/assets/js/unlimited-marquee.js', __FILE__ ), array(), false, true );
+    wp_enqueue_script( 'admin-theme-script', plugins_url( '/assets/js/unlimited-marquee.js', __FILE__ ), array(), '1.0.0', true );
 
     // Enqueue second JavaScript file
-    wp_enqueue_script( 'admin-theme-script-2', plugins_url( '/assets/js/unlimited-marquee-textarea.js', __FILE__ ), array(), false, true );
+    wp_enqueue_script( 'admin-theme-script-2', plugins_url( '/assets/js/unlimited-marquee-textarea.js', __FILE__ ), array(), '1.0.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'admin_unlimited_marquee_js' );
+
 
 function unlimited_marquee_styles() {
     global $post;
 
     // Check if we are on the post edit or create screen
-    if (is_admin() && isset($post) && $post->post_type == 'marquee') {
-        // Enqueue Tailwind CSS from CDN
+    if ( is_admin() && isset( $post ) && $post->post_type == 'marquee' ) {
+        // Enqueue Tailwind CSS from CDN with version 2.2.19
         wp_enqueue_style( 'admin-tailwind', 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css', array(), '2.2.19' );
 
-        // Enqueue second CSS file
-        wp_enqueue_style( 'admin-post-style', plugins_url( '/assets/css/post.css', __FILE__ ) );
+        // Enqueue second CSS file with a version number
+        wp_enqueue_style( 'admin-post-style', plugins_url( '/assets/css/post.css', __FILE__ ), array(), '1.0.0' );
     }
 }
 add_action( 'admin_enqueue_scripts', 'unlimited_marquee_styles' );
@@ -57,14 +59,17 @@ add_action( 'admin_enqueue_scripts', 'unlimited_marquee_styles' );
 
 
 
+
 function theme_js_script() {
-    wp_enqueue_script( 'theme-script', plugins_url( 'assets/js/unlimited-marquee.js', __FILE__ ) );
+    // Enqueue the script with a version number
+    wp_enqueue_script( 'theme-script', plugins_url( 'assets/js/unlimited-marquee.js', __FILE__ ), array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'theme_js_script' );
 
 if ( is_admin() ) {
-  add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'my_plugin_actions', 10, 4 );
+    add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'my_plugin_actions', 10, 4 );
 }
+
 
 function my_plugin_actions( $actions, $plugin_file, $plugin_data, $context ) {
   $website_url = get_site_url();
