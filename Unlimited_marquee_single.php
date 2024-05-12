@@ -24,13 +24,57 @@ if ( file_exists( $path_to_file ) ) {
     require_once $path_to_file;
 
     // Check if the function exists before calling it
-    if ( function_exists( 'unlimited_marquee_widget' ) ) {
-        // Call the function
-        $output = unlimited_marquee_widget( $post_id );
-         echo esc_html( $output );
-    } else {
-        echo 'Error: unlimited_marquee_widget function is not defined.';
-    }
+   if ( function_exists( 'unlimited_marquee_widget' ) ) {
+    // Call the function
+    $output = unlimited_marquee_widget( $post_id );
+
+    // Define the list of allowed HTML tags and attributes
+    $allowed_tags = array(
+        'div' => array(
+            'class' => array(),
+            'style' => array(),
+        ),
+        'marquee' => array(
+            'class' => array(),
+            'behavior' => array(),
+            'scrolldelay' => array(),
+            'direction' => array(),
+            'scrollamount' => array(),
+            'style' => array(),
+            'height' => array(),
+            'width' => array(),
+        ),
+		
+		'style' => array(
+        'type' => true, // Allow the type attribute
+        'media' => true, // Allow the media attribute
+        'scoped' => true, // Allow the scoped attribute
+    ),
+        'link' => array(
+            'href' => array(),
+            'rel' => array(),
+            'type' => array(),
+        ),
+        'a' => array(
+            'href' => array(),
+            'style' => array(),
+            'target' => array(),
+        ),
+        'script' => array(
+            'src' => array(),
+        ),
+        'span' => array(
+            'class' => array(),
+            'style' => array(),
+        ),
+    );
+
+    // Output the result with allowed HTML tags and attributes
+    echo wp_kses( $output, $allowed_tags );
+} else {
+    echo 'Error: unlimited_marquee_widget function is not defined.';
+}
+
 } else {
     echo 'Error: File Unlimited_marquee.php not found.';
 }
