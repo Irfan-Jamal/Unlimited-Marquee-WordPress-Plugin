@@ -27,7 +27,7 @@ if ( file_exists( $path_to_file ) ) {
     if ( function_exists( 'unlimited_marquee_widget' ) ) {
         // Call the function
         $output = unlimited_marquee_widget( $post_id );
-        echo $output; // Output the result
+         echo esc_html( $output );
     } else {
         echo 'Error: unlimited_marquee_widget function is not defined.';
     }
