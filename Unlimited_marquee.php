@@ -158,17 +158,18 @@ function render_text_areas_meta_box( $post ) {
                 $link = isset( $text_links[ $key ] ) ? $text_links[ $key ] : '';
                 $target = isset( $link_targets[ $key ] ) ? $link_targets[ $key ] : '_self';
                 ?>
-                <div class="border border-gray-300 p-4 rounded-lg">
-                    <label for="text_<?php echo $key; ?>" class="block mb-2">Text Area <?php echo $key + 1; ?>:</label>
-                    <textarea name="text_areas[]" id="text_<?php echo $key; ?>" rows="4" cols="50" class="block w-full border border-gray-300 rounded-md"><?php echo esc_textarea( $text ); ?></textarea>
-                    <label for="link_<?php echo $key; ?>" class="block mb-2 mt-4">Link:</label>
-                    <input type="text" name="text_links[]" id="link_<?php echo $key; ?>" value="<?php echo esc_attr( $link ); ?>" class="block w-full border border-gray-300 rounded-md">
-                    <select name="link_targets[]" class="block w-full border border-gray-300 rounded-md mt-4">
-                        <option value="_self" <?php selected( $target, '_self' ); ?>>Open in Same Tab</option>
-                        <option value="_blank" <?php selected( $target, '_blank' ); ?>>Open in New Tab</option>
-                    </select>
-                    <button type="button" class="remove-text bg-red-500 text-white px-4 py-2 mt-4 rounded-lg hover:bg-red-600">Remove</button>
-                </div>
+               <div class="border border-gray-300 p-4 rounded-lg">
+    <label for="text_<?php echo esc_attr( $key ); ?>" class="block mb-2">Text Area <?php echo esc_html( $key + 1 ); ?>:</label>
+    <textarea name="text_areas[]" id="text_<?php echo esc_attr( $key ); ?>" rows="4" cols="50" class="block w-full border border-gray-300 rounded-md"><?php echo esc_textarea( $text ); ?></textarea>
+    <label for="link_<?php echo esc_attr( $key ); ?>" class="block mb-2 mt-4">Link:</label>
+    <input type="text" name="text_links[]" id="link_<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( $link ); ?>" class="block w-full border border-gray-300 rounded-md">
+    <select name="link_targets[]" class="block w-full border border-gray-300 rounded-md mt-4">
+        <option value="_self" <?php selected( $target, '_self' ); ?>>Open in Same Tab</option>
+        <option value="_blank" <?php selected( $target, '_blank' ); ?>>Open in New Tab</option>
+    </select>
+    <button type="button" class="remove-text bg-red-500 text-white px-4 py-2 mt-4 rounded-lg hover:bg-red-600">Remove</button>
+</div>
+
                 <?php
             endforeach;
             else:
