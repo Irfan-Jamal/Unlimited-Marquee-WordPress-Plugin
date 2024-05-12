@@ -1,4 +1,11 @@
-# Unlimited Marquee Plugin
+# Unlimited Marquee
+Contributors: Muhammad Jamal
+Tags: marquee, scrolling, animation
+Requires at least: 6.0
+Tested up to: 6.5
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Unlimited Marquee is a WordPress plugin designed to enhance your website with interactive marquees. You can easily create and customize marquees with various options to make them fit your design seamlessly.
 
