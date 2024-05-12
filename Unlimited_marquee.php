@@ -9,7 +9,7 @@ Requires PHP: 5.7
 Author: Muhammad Jamal
 Author URI: https://etookhan.com
 License: GPLv2 or later
-Text Domain: ulmarquee
+Text Domain: Unlimited-Marquee
 */
 
 
